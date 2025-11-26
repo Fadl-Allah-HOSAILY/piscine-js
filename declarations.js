@@ -6,7 +6,7 @@ const obj = {
     bool : true,
     undef : undefined
 };
-const neasted = {
+const nested = {
     arr : [4, undefined, '2'],
     obj : {
         str : "salam",
@@ -16,4 +16,4 @@ const neasted = {
 };
 Object.freeze(arr);
 Object.freeze(obj);
-Object.freeze(neasted);
+Object.freeze(nested);
