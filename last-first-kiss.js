@@ -2,7 +2,7 @@ function first(arg){
     return arg[0]
 }
 function last(arg){
-    return arg[length-1]
+    return arg[arg.length-1]
 }
 function kiss(arg){
     const a = first(arg)
