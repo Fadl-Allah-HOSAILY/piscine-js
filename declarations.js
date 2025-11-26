@@ -11,7 +11,7 @@ const nested = {
     obj : {
         str : "salam",
         num : 5,
-        boo : false
+        bool : false
     }
 };
 Object.freeze(arr);
