@@ -1,12 +1,12 @@
 
-const isPositive = (nbr) => (nbr >= 0)
+const isPositive = (nbr) => (nbr > 0)
 
 function abs(num){
     if (isPositive(num)) {
         return num
-    }else{
+    }else if (num === 0){
+        return 0
+    }else {
         return -num
     }
 }
-
-console.log(abs(0))
