@@ -12,7 +12,7 @@ is.def = (arg) => arg !== undefined;
 
 is.arr = (arg) => Array.isArray(arg);
 
-is.obj = (arg) => (typeof(arg) === "object" && !Array.isArray || typeof(arg) === "null");
+is.obj = (arg) => (typeof(arg) === "object" && !Array.isArray || arg !== null);
 
 is.fun = (arg) => (typeof(arg) === "function");
 
