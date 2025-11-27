@@ -1,5 +1,5 @@
 
-const isPositive = (nbr) => (nbr > 0)
+const isPositive = (nbr) => (nbr >= 0)
 
 function abs(num){
     if (isPositive(num)) {
@@ -8,3 +8,5 @@ function abs(num){
         return -num
     }
 }
+
+console.log(abs(0))
