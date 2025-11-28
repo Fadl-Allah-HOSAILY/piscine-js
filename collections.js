@@ -10,6 +10,10 @@ function setToArr(set){
     const arr = [...set];
     return arr
 }
+function setToStr(set){
+    const str = set.join("");
+    return str
+}
 function strToArr(str){
     const arr = str.Split("");
     return arr
@@ -18,10 +22,6 @@ function strToSet(str){
     const arr = strToArr(str);
     const uniqueSet = arrToSet(arr)
     return uniqueSet
-}
-function strToArr(str){
-    const arr = str.Split("");
-    return arr
 }
 function mapToObj(map){
     const obj = Object.fromEntries(map)
