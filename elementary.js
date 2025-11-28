@@ -64,10 +64,11 @@ function divide(a, b){
     }
 }
 function modulo(a, b){
+    if (b < 0){
+        b = -b
+    }
     while (a > b) {
         a = a - b
     }
     return a
 }
-
-console.log(multiply(-123, -22));
