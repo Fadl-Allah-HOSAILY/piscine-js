@@ -11,7 +11,8 @@ function setToArr(set){
     return arr
 }
 function setToStr(set){
-    const str = set.join("");
+    const arr = setToArr(set);
+    const str = arrToStr(arr)
     return str
 }
 function strToArr(str){
