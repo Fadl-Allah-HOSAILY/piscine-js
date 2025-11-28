@@ -4,7 +4,9 @@ function slice(arr, startIn=0,endIn=arr.length){
         array.push(arr[i])
     }
     if (typeof(arr) == "string"){
-        return arr.join("")
+        return array.join("")
     }
-    return arr
+    return array
 }
+
+console.log(slice('abcdef', 2));
