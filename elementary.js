@@ -52,13 +52,15 @@ function divide(a, b){
             result ++
         }
         return result
-    }else {
+    }else if (a < 0 && b > 0){
         a = -a
         while (a >= b) {
             a = a - b 
             result ++
         }
         return -result
+    }else if (b === 0){
+        return "infinity"
     }
 }
 function modulo(a, b){
