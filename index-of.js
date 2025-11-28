@@ -15,23 +15,16 @@ function indexOf(arr, value, opt){
 }
 function lastIndexOf(arr, value, opt){
     if (opt === undefined) {
-    opt = 0;
-    }
-    if (opt < 0){
+        opt = arr.length - 1;
+    }if (opt < 0) {
         opt = arr.length + opt;
-        if (opt < 0) opt = 0
     }
-    let result = 0
-    for (let i = opt; i < arr.length; i++){
+    for (let i = opt; i >= 0; i--){
         if (arr[i] === value){
-            result = i
+            return i
         }
     }
-    if (result = 0){
-        return -1
-    }else{
-        return result
-    }
+    return -1
 }
 function includes(arr, value){
     for (let i = 0; i < arr.length; i++){
