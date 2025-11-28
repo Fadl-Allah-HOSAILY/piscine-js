@@ -44,5 +44,8 @@ function strToObj(str){
     const obj = arrToObj(arr)
     return obj
 }
-const arr = [1, 2, 1, 3]
-console.log(arrToObj(arr))
+function superTypeOf(value) {
+  if (value === null) return "null";
+  if (value === undefined) return "undefined";
+  return value.constructor.name;
+}
