@@ -64,11 +64,21 @@ function divide(a, b){
     }
 }
 function modulo(a, b){
+    let aminus = false
+    if (a < 0){
+        aminus = true
+        a = -a
+    }
     if (b < 0){
         b = -b
     }
     while (a > b) {
         a = a - b
     }
-    return a
+    if (aminus){
+
+        return -a
+    }else{
+        return a
+    }
 }
