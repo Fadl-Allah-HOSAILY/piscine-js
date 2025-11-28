@@ -36,12 +36,13 @@ function objToMap(obj){
     const map = new Map(Object.entries(obj))
     return map
 }
-function arrToObj(arr){
-    const obj = Object.entries(arr);
-    return obj
+function arrToObj(arr) {
+  return { ...arr };
 }
 function strToObj(str){
     const arr = strToArr(str)
     const obj = arrToObj(arr)
     return obj
 }
+const arr = [1, 2, 1, 3]
+console.log(arrToObj(arr))
