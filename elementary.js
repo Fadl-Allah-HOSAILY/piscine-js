@@ -3,13 +3,24 @@ function multiply(a, b) {
         return 0
     }
     let result = 0;
-    for (let i = 0; i < b; i++) {
-        result += a;
+    if (a > 0 && b > 0){
+        for (let i = 0; i < b; i++) {
+            result += a;
+        }
+        return result;
+    }else if (a < 0){
+        a = -a
+        for (let i = 0; i < b; i++) {
+            result += a;
+        }
+        return -result;
+    }else if (b < 0){
+        b = -b
+        for (let i = 0; i < b; i++) {
+            result += a;
+        }
+        return -result;
     }
-    if (a < 0 || b < 0){
-    return -result;
-    }
-    return result;
 }
 function divide(a, b){
     let result = 0
@@ -50,3 +61,4 @@ function modulo(a, b){
     return a
 }
 
+console.log(multiply(123, -22));
