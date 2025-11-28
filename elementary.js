@@ -8,18 +8,25 @@ function multiply(a, b) {
             result += a;
         }
         return result;
-    }else if (a < 0){
+    }else if (a < 0 && b > 0){
         a = -a
         for (let i = 0; i < b; i++) {
             result += a;
         }
         return -result;
-    }else if (b < 0){
+    }else if (a > 0 && b < 0){
         b = -b
         for (let i = 0; i < b; i++) {
             result += a;
         }
         return -result;
+    }else {
+        a = -a
+        b = -b
+        for (let i = 0; i < b; i++) {
+            result += a;
+        }
+        return result;
     }
 }
 function divide(a, b){
@@ -61,4 +68,4 @@ function modulo(a, b){
     return a
 }
 
-console.log(multiply(123, -22));
+console.log(multiply(-123, -22));
