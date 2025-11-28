@@ -1,7 +1,13 @@
 function multiply(a, b) {
+    if (a === 0 || b === 0){
+        return 0
+    }
     let result = 0;
     for (let i = 0; i < b; i++) {
         result += a;
+    }
+    if (a < 0 || b < 0){
+    return -result;
     }
     return result;
 }
