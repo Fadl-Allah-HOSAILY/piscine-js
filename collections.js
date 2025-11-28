@@ -16,7 +16,7 @@ function setToStr(set){
     return str
 }
 function strToArr(str){
-    const arr = str.Split("");
+    const arr = str.split("");
     return arr
 }
 function strToSet(str){
