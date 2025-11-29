@@ -26,5 +26,7 @@ function DNA(rna){
             dna += "A"
         }
     }
-    return rna
+    return dna
 }
+
+console.log(RNA(DNA('AUCG')));
