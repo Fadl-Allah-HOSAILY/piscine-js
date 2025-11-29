@@ -32,6 +32,9 @@ function trunc(x){
     return res
 }
 function floor(x){
+    if (x === 0){
+        return 0
+    }
     if (x > 0){
         return trunc(x)
     }else{
