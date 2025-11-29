@@ -12,7 +12,7 @@ function cutLast(str){
     }
     return result
 }
-function cutLast(str){
+function cutFirstLast(str){
     let result = ""
     for (let i = 2; i < str.length-2; i++) {
         result += str[i]
@@ -32,8 +32,8 @@ function keepLast(str){
     let result = ""
     for (let i = str.length - 2; i < str.length; i++) {
         result += str[i]
-        return result    
     }
+    return result    
 }
 function keepFirstLast(str){
     let result = ""
@@ -45,7 +45,6 @@ function keepFirstLast(str){
     }
     for (let i = str.length - 2; i < str.length; i++) {
         result += str[i]
-        return result    
     }
-    
+    return result    
 }
