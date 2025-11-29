@@ -2,14 +2,14 @@ function nasa(N){
     let res = ""
     for (let i = 1; i <= N; i++) {
         if (i % 5 === 0 && i % 3 === 0 ){
-            res += "NASA"
+            res += "NASA" + " "
         }else if (i % 5 === 0 ){
-            res += "SA"
+            res += "SA" + " "
         }else if ( i % 3 === 0 ){
-            res += "NA"
+            res += "NA" + " "
         }else {
-            res += i
+            res += i + " "
         }
     }
-    return res
+    return res.slice(0, res.length-1)
 }
