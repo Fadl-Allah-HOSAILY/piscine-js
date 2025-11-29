@@ -1,21 +1,35 @@
-function isInt(n) {
-  return n === n + 0;
-}
 function trunc(x){
-    let count = 0 
-  if (x > 0) {
-    while (x > 0 && x - 1 >= 0) {
-      x = x - 1
-      count ++
+    let res = 0
+    let isNegative = false 
+    if (x < 0){
+        isNegative = true
+        x= -x 
     }
-  } else if (x < 0) {
-    while (x < 0 && x + 1 <= 0) {
-      x = x + 1
-      count ++
+    while (x >= 1) {
+        if (x > 100000000){
+            res += 100000000
+            x -= 100000000
+        }else if (x > 100000){
+            res += 100000
+            x -= 100000
+        }else if (x > 1000){
+            res += 1000
+            x -= 1000
+        }else if (x > 10){
+            res += 10
+            x -= 10
+        }else if (x > 10){
+            res += 10
+            x -= 10
+        }else if (x < 10){
+            res += 1
+            x -= 1
+        }
     }
-    count = -count
-  }
-  return count
+    if (isNegative){
+        return - res
+    }
+    return res
 }
 function floor(x){
     if (x > 0){
@@ -32,26 +46,28 @@ function ceil(x){
     }
 }
 function round(x){
-    if (x > 0) {
-        let y = x
-        while (y > 0 && y - 1 >= 0) {
-        y = y - 1
-        }
-        if (y >= 0.5){
-            return ceil(x)
+    let isNegative = false 
+    if (x < 0){
+        isNegative = true
+        x= -x 
+    }
+    let y = trunc(x)
+    if (isNegative){
+        if (y - x >= 0.5){
+            return -ceil(y)
         }else{
-            return floor(x)
-        }
-    }else {
-        x = - x
-        let y = x
-        while (y > 0 && y - 1 >= 0) {
-        y = y - 1
-        }
-        if (y >= 0.5){
-            return -ceil(x)
-        }else{
-            return -floor(x)
+            return -floor(y)
         }
     }
+    if (y - x >= 0.5){
+        return -ceil(y)
+    }else{
+        return -floor(y)
+    }
 }
+
+const nums = [3.7]
+// console.log(nums.map(round))
+// console.log(nums.map(floor))
+console.log(trunc(3.7))
+// console.log(nums.map(ceil))
