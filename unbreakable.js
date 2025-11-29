@@ -5,13 +5,19 @@ function split(str, flag){
     let arr = []
     let index = 0
     for (let i = 0; i < str.length; i++) {
+        if (flag == ""){
+                arr.push(str[i])
+                continue
+        }
         if (str.slice(i, i + flag.length) === flag){
             arr = memoClean(str, arr, index, i)
             index = i + flag.length
             i = i + flag.length -1
         }
     }
-    arr.push(str.slice(index));
+    if (flag!='') {
+        arr.push(str.slice(index));
+    }
     return arr
 }
 
@@ -31,4 +37,4 @@ function memoClean(str, arr, index, i){
     arr.push(str.slice(index, i))
     return arr
 }
-console.log(split('a b c', ' '));
+console.log(split('a b c', ''));
