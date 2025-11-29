@@ -6,7 +6,7 @@ function split(str, flag){
     let index = 0
     for (let i = 0; i < str.length; i++) {
         if (str.slice(i, i + flag.length) === flag){
-            arr.push(str.slice(index, i))
+            arr = memoClean(str, arr, index, i)
             index = i + flag.length
             i = i + flag.length -1
         }
@@ -25,4 +25,9 @@ function join(arr, flag){
     }
     return str
     
+}
+
+function memoClean(str, arr, index, i){
+    arr.push(str.slice(index, i))
+    return arr
 }
