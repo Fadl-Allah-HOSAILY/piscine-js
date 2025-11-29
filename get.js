@@ -1,6 +1,6 @@
 function get(src, path){
-    const pathParts = path.split(".")
-    return pathParts
+    let res = recursion(src, path.split("."))
+    return res
 }
 
 function recursion(obj, path){
@@ -9,3 +9,5 @@ function recursion(obj, path){
     }
         return obj[path[0]]
 }
+
+// console.log(get({ key: 'value' }, 'key'));
