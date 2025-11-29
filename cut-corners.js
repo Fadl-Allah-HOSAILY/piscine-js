@@ -46,6 +46,13 @@ function ceil(x){
     }
 }
 function round(x){
+    if (x === 0){
+        return 0
+    }else if (x > 0 && x < 0.5){
+        return 0
+    }else if (x >= 0.5 && x < 1){
+        return 1
+    }
     let isNegative = false 
     if (x < 0){
         isNegative = true
