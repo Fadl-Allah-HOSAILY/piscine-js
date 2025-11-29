@@ -10,6 +10,7 @@ function split(str, flag){
             index = i + flag.length
         }
     }
+    arr.push(str.slice(index));
     return arr
 }
 
@@ -24,3 +25,4 @@ function join(arr, flag){
     return str
     
 }
+console.log(split('a b c', ' '));
