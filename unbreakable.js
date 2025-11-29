@@ -8,10 +8,8 @@ function split(str, flag){
         if (str.slice(i, i + flag.length) === flag){
             arr.push(str.slice(index, i))
             index = i + flag.length
-            i = i + flag.length
         }
     }
-    arr.push(str.slice(index, str.length))
     return arr
 }
 
