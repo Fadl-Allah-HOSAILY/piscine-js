@@ -20,6 +20,9 @@ function cutFirstLast(str){
     return result
 }
 function keepFirst(str){
+    if (str.length <= 2){
+        return str
+    }
     let result = ""
     for (let i = 0; i < str.length; i++) {
         result += str[i]
