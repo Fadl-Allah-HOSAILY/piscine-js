@@ -8,6 +8,7 @@ function split(str, flag){
         if (str.slice(i, i + flag.length) === flag){
             arr.push(str.slice(index, i))
             index = i + flag.length
+            i = i + flag.length -1
         }
     }
     arr.push(str.slice(index));
@@ -25,4 +26,3 @@ function join(arr, flag){
     return str
     
 }
-console.log(split('a b c', ' '));
