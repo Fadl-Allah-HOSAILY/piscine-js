@@ -2,7 +2,7 @@ function split(str, flag){
     if (flag == undefined){
         flag = ""
     }
-    const arr = []
+    let arr = []
     let index = 0
     for (let i = 0; i < str.length; i++) {
         if (str.slice(i, i + flag.length) === flag){
@@ -31,3 +31,4 @@ function memoClean(str, arr, index, i){
     arr.push(str.slice(index, i))
     return arr
 }
+console.log(split('a b c', ' '));
