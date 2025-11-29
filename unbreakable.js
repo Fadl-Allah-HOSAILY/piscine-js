@@ -27,14 +27,16 @@ function join(arr, flag){
     }
     let str = ""
     for (let i = 0; i < arr.length; i++) {
-        str += arr[i] + flag
+        if (i == arr.length-1){
+            str += arr[i]
+        }else{
+            str += arr[i] + flag
+        }
     }
     return str
     
 }
-
 function memoClean(str, arr, index, i){
     arr.push(str.slice(index, i))
     return arr
 }
-console.log(split('a b c', ''));
