@@ -53,21 +53,20 @@ function round(x){
     }
     let y = trunc(x)
     if (isNegative){
-        if (y - x >= 0.5){
+        if (x - y >= 0.5){
             return -ceil(y)
         }else{
             return -floor(y)
         }
     }
-    if (y - x >= 0.5){
-        return -ceil(y)
+    if (x - y >= 0.5){
+        return ceil(y)
     }else{
-        return -floor(y)
+        return floor(y)
     }
 }
-
-const nums = [3.7]
-// console.log(nums.map(round))
-// console.log(nums.map(floor))
-console.log(trunc(3.7))
-// console.log(nums.map(ceil))
+const nums = [3.7, -3.7, 3.1, -3.1]
+console.log(nums.map(round))
+console.log(nums.map(floor))
+console.log(nums.map(trunc))
+console.log(nums.map(ceil))
