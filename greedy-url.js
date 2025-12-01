@@ -1,12 +1,12 @@
-function getURL(url){
+function getURL(dataSet){
     const reg = /https?:\/\/\S+/g;
-    return arr = url.match(reg) || [] 
+    return arr = dataSet.match(reg) || [] 
 }
 
-function paramCount(url){
-    for (let i = 0; i < url.length; i++) {
-        if (url[i] === "?"){
-            const res = url.slice(i+1)
+function paramCount(dataSet){
+    for (let i = 0; i < dataSet.length; i++) {
+        if (dataSet[i] === "?"){
+            const res = dataSet.slice(i+1)
             const params = res.split("&")
             return params.length
         }
