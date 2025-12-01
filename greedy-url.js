@@ -1,6 +1,6 @@
 function getURL(dataSet){
     const reg = /https?:\/\/\S+/g;
-    return arr = dataSet.match(reg) || [] 
+    return dataSet.match(reg) || [] 
 }
 
 function paramCount(dataSet){
