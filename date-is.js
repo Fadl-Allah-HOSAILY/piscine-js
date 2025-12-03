@@ -19,10 +19,10 @@ function isAfter(date1, date2){
 
 function isFuture(date){
     const now = Date.now()
-    if ((isValid(date)) && (isAfter(now))) return true; 
+    if ((isValid(date)) && (isAfter(now, date))) return true; 
 }
 
 function isPast(date){
     const now = Date.now()
-    if ((isValid(date)) && (isBefore(now))) return true; 
+    if ((isValid(date)) && (isBefore(now, date))) return true; 
 }
