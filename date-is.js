@@ -19,10 +19,12 @@ function isAfter(date1, date2){
 
 function isFuture(date){
     const now = Date.now()
-    if ((isValid(date)) && (isAfter(now, date))) return true; 
+    if ((isValid(date)) && (now > date)) return true; 
 }
 
 function isPast(date){
     const now = Date.now()
-    if ((isValid(date)) && (isBefore(now, date))) return true; 
+    if ((isValid(date)) && ((now < date))) return true; 
 }
+
+console.log(isFuture(new Date('1992-01-01')));
