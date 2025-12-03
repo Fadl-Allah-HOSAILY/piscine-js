@@ -18,8 +18,8 @@ function isAfter(date1, date2){
 }
 
 function isFuture(date){
-    if (!isValid(date))return false;
-    return !isPast(date)
+    const now = Date.now()
+    if ((isValid(date)) && (isAfter(now))) return true; 
 }
 
 function isPast(date){
