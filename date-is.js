@@ -9,15 +9,19 @@ function isValid(date){
     return true
 }
 
+function isBefore(date1, date2){
+    return date1 < date2
+}
+
 function isAfter(date1, date2){
     return date1 > date2
 }
 
-function isAfter(date1, date2){
-    return date1 < date2
+function isFuture(date){
+    return !isPast(date)
 }
 
 function isPast(date){
     const now = Date.now()
-    if ((isValid(date)) && (isAfter(now))) return true; 
+    if ((isValid(date)) && (isBefore(now))) return true; 
 }
