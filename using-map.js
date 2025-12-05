@@ -33,17 +33,16 @@ function tempForecasts(arr){
         const fahren = +str
         return Math.floor((fahren - 32) * 5 / 9) + "°Celsius"
     }
+    function toUpper(str) {
+    let arr = str.split(" ");
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = arr[i][0].toUpperCase() + arr[i].slice(1);
+    }
+    return arr.join(" ");
+}
+
     return arr.map(obj => {
-        return `${toCel(obj.temperature)} in ${obj.city}, ${obj.state[0].toUpperCase()}${obj.state.slice(1)}`
+        return `${toCel(obj.temperature)} in ${obj.city}, ${toUpper(obj.state)}`
         
     })
 }
-
-console.log(tempForecasts([
-  {
-    city: 'Pasadena',
-    temperature: ' 101 °F',
-    state: 'california',
-    region: 'West',
-  },
-]));
