@@ -19,11 +19,10 @@ function fahrenheitToCelsius(arr){
 
 function trimTemp(arr){
     return arr.map(temp =>{
-         const obj = {
-            city : temp.city,
-            temperature : temp.temperature.trim().split(" ").join("")
-        }
-        return obj
+
+            temp.temperature = temp.temperature.trim().split(" ").join("")
+        
+        return temp
     })
 }
 
