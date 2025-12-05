@@ -21,7 +21,7 @@ function trimTemp(arr){
     return arr.map(temp =>{
          const obj = {
             city : temp.city,
-            temperature : temp.temperature.split(" ").join("")
+            temperature : temp.temperature.trim().split(" ").join("")
         }
         return obj
     })
@@ -40,4 +40,7 @@ function tempForecasts(arr){
     })
 }
 
-console.log(fahrenheitToCelsius(['68°F', '59°F', '25°F']));
+console.log(trimTemp([
+  { city: 'Los Angeles', temperature: '  101 °F   ' },
+  { city: 'San Francisco', temperature: ' 84 ° F   ' },
+]));
