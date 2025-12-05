@@ -34,12 +34,16 @@ function tempForecasts(arr){
         return Math.floor((fahren - 32) * 5 / 9) + "°Celsius"
     }
     return arr.map(obj => {
-        return `${toCel(obj.temperature)} in ${obj.city}, ${obj.state}`
+        return `${toCel(obj.temperature)} in ${obj.city}, ${obj.state[0].toUpperCase()}${obj.state.slice(1)}`
         
     })
 }
 
-console.log(trimTemp([
-  { city: 'Los Angeles', temperature: '  101 °F   ' },
-  { city: 'San Francisco', temperature: ' 84 ° F   ' },
+console.log(tempForecasts([
+  {
+    city: 'Pasadena',
+    temperature: ' 101 °F',
+    state: 'california',
+    region: 'West',
+  },
 ]));
