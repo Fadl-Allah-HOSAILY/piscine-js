@@ -12,7 +12,8 @@ function upperCasingStates(arr){
 }
 
 function fahrenheitToCelsius(arr){
-    return arr.map(eldegm => {
+
+    return arr.map(deg => {
         return Math.floor(+deg.slice(0, deg.length -2 - 32) * 5 / 9) + "°C"
     })
 }
