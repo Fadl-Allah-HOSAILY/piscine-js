@@ -1,24 +1,30 @@
 export function getArchitects(){
-    let architects = [...document.getElementsByTagName('a')];
-    let nonArchitects = [...document.querySelectorAll("span")]
-    return [architects,nonArchitects]
+    let architects = document.querySelectorAll('a')
+    let nonArchitects = document.querySelectorAll('span')
+    let arrArchitects = [...architects]
+    let arrNonArchitects = [...nonArchitects]
+    return [arrArchitects,arrNonArchitects]
 }
 
 export function getClassical(){
     let classical = document.querySelectorAll('a.classical')
     let nonClassical = document.querySelectorAll('a:not(a.classical)')
-    return [classical, nonClassical]
+    let arrClassical = [...classical]
+    let arrNonClassical = [...nonClassical]
+    return [arrClassical, arrNonClassical]
 }
 
 export function getActive(){
     let active = document.querySelectorAll('a.classical.active')
-    let nonActive = document.querySelectorAll('a.classical.a:not(a.active)')
-
-    return [active, nonActive]
+    let nonActive = document.querySelectorAll('a.classical:not(a.classical.active)')
+    let arrActive = [...active]
+    let arrNonActive = [...nonActive]
+    return [arrActive, arrNonActive]
 }
 
 export function getBonannoPisano(){
-    let bonannoPisano = document.getElementById("BonannoPisano")
+    let bonannoPisano = document.getElementById('BonannoPisano')
     let activeClassical = document.querySelectorAll('a.classical.active')
-    return [bonannoPisano, [...activeClassical]]
+    let arrActiveClassical = [...activeClassical]
+    return [bonannoPisano, arrActiveClassical]
 }
