@@ -1,6 +1,7 @@
-function adder(arr){
-    return arr.reduce((sum, num) =>{
-        return sum + num
+function adder(arr, ...args){
+    const array = arr.concat(args)
+    return array.reduce((sum, num) =>{
+        return sum += num
     }, 0)
 }
 
