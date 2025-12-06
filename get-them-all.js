@@ -1,15 +1,15 @@
 function getArchitects(){
     const architects = [...document.querySelectorAll("a")]
-    const nonArchitects = [...document.querySelectorAll("body *:not(a)")];
+    const nonArchitects = [...document.querySelectorAll("span")];
     return [architects,nonArchitects]
 }
 
 function getClassical(){
     const architects = getArchitects()
-    const classical = architects.forEach(elem =>{
+    const classical = architects.filter(elem =>{
         elem.classList.contains("classical")
     })
-    const nonClassical = architects.forEach(elem =>{
+    const nonClassical = architects.filter(elem =>{
         !elem.classList.contains("classical")
     })
     return [classical, nonClassical]
@@ -17,10 +17,10 @@ function getClassical(){
 
 function getActive(){
     const architects = getArchitects()
-    const active = architects.forEach(elem =>{
+    const active = architects.filter(elem =>{
         elem.classList.contains("active")
     })
-    const nonActive = architects.forEach(elem =>{
+    const nonActive = architects.filter(elem =>{
         !elem.classList.contains("active")
     })
     return [active, nonActive]
@@ -28,12 +28,12 @@ function getActive(){
 
 function getBonannoPisano(){
     const bonannoPisano = document.getElementById("BonannoPisano")
-    const classical = architects.forEach(elem =>{
+    const classical = architects.filter(elem =>{
         elem.classList.contains("classical")
     })
-    const activeClassical = classical.forEach(elem =>{
+    const activeClassical = classical.filter(elem =>{
         elem.classList.contains("active")
     })
     const architects = getArchitects()
-    [bonannoPisano, activeClassical]
+    return [bonannoPisano, activeClassical]
 }
