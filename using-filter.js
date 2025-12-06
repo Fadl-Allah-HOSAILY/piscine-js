@@ -4,10 +4,8 @@ function filterShortStateName(arr) {
 
 function filterStartVowel(arr) {
     function vowel(str) {
-        if (str[0] === "a" || str[0] === "e" || str[0] === "i" || str[0] === "o" || str[0] === "u") {
-            return true
-        }
-        return false
+        const first = str[0].toLowerCase()
+        return ["a", "e", "i", "o", "u"].includes(first);
     }
     return arr.filter(str => (vowel(str)))
 }
