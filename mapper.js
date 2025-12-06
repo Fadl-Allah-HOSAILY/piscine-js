@@ -9,11 +9,11 @@ function map(arr, func) {
 function flatMap(arr, func) {
     let res = []
     for (let i = 0; i < arr.length; i++) {
-        const mapped = map(func(arr[i], i, arr))
-        if (Array.isArray(mapped)){
-            res.push(...mapped)
+        const map = func(arr[i], i, arr)
+        if (Array.isArray(map)){
+            res.push(...map)
         }else{
-            res.push(mapped)
+            res.push(map)
         }
     }
     return res
