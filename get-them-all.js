@@ -1,7 +1,7 @@
 function getArchitects(){
     const architects = [...document.getElementsByTagName('a')];
     const nonArchitects = [...document.querySelectorAll('body *:not(a)')].filter(el => el.tagName === 'SPAN')
-    return [architects,nonArchitects]
+    return [architects,[nonArchitects]]
 }
 
 function getClassical(){
@@ -12,7 +12,7 @@ function getClassical(){
     const nonClassical = architects.filter(elem =>{
         !elem.classList.contains("classical")
     })
-    return [classical, nonClassical]
+    return [classical, [nonClassical]]
 }
 
 function getActive(){
@@ -23,7 +23,7 @@ function getActive(){
     const nonActive = architects.filter(elem =>{
         !elem.classList.contains("active")
     })
-    return [active, nonActive]
+    return [active, [nonActive]]
 }
 
 function getBonannoPisano(){
@@ -35,5 +35,5 @@ function getBonannoPisano(){
         elem.classList.contains("active")
     })
     const architects = getArchitects()
-    return [bonannoPisano, activeClassical]
+    return [bonannoPisano, [activeClassical]]
 }
