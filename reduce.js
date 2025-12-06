@@ -1,20 +1,19 @@
-function fold(arr, func, acc){
+function fold(arr, func, acc = 0){
     for (let i = 0; i < arr.length; i++) {
         acc = func(acc, arr[i])
     }
     return acc
 }
 
-function foldRight(arr, func, acc){
+function foldRight(arr, func, acc = 0){
     for (let i = arr.length - 1; i >= 0; i--) {
         acc = func(acc, arr[i])
     }
     return acc
 }
 
-function reduce(arr, func,){
+function reduce(arr, func, acc = arr[0]){
     if (arr.length === 1) return arr[0]
-    let acc = arr[0]
     for (let i = 1; i < arr.length; i++) {
         acc = func(acc, arr[i])
     }
@@ -22,11 +21,9 @@ function reduce(arr, func,){
 }
 
 
-function reduceRight(arr, func,){
+function reduceRight(arr, func, acc = arr[arr.length - 1]){
     if (arr.length === 1) return arr[0]
-    let acc = arr[arr.length - 1]
-    if (arr.length === 1) return acc
-    for (let i = arr.length -2; i >= 0; i++) {
+    for (let i = arr.length -2; i >= 0; i--) {
         acc = func(acc, arr[i])
     }
     return acc
