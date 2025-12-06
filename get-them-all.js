@@ -1,6 +1,6 @@
 function getArchitects(){
     const architects = [...document.getElementsByTagName('a')];
-    const nonArchitects = [...document.querySelectorAll('body *:not(a)')].filter(el => el.tagName === 'SPAN')
+    const nonArchitects = [...document.querySelectorAll('body *:not(a)')].filter(el => el.architects === 'SPAN')
     return [architects,[nonArchitects]]
 }
 
