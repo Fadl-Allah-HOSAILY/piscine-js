@@ -1,7 +1,7 @@
-function adder(arr){
+function adder(arr, init = 0){
     return arr.reduce((sum, num) =>{
         return sum + num
-    }, 0)
+    }, init)
 }
 
 function sumOrMul(arr){
