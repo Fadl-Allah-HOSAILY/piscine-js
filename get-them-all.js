@@ -20,5 +20,5 @@ export function getActive(){
 export function getBonannoPisano(){
     let bonannoPisano = document.getElementById("BonannoPisano")
     let activeClassical = document.querySelectorAll('a.classical.active')
-    return [bonannoPisano, [activeClassical]]
+    return [bonannoPisano, [...activeClassical]]
 }
