@@ -4,20 +4,20 @@ function adder(arr, init = 0){
     }, init)
 }
 
-function sumOrMul(arr){
+function sumOrMul(arr, init = 0){
     return arr.reduce((res, num) =>{
         if (num % 2 === 0){
-            res .mul *= num
+            res *= num
         }else {
-            res.sum += num
+            res += num
         }
         return res
-    },{sum : 0, mul: 1})
+    },init)
 }
 
-function funcExec(arr){
+function funcExec(arr, init = 0){
     return arr.reduce((res, func) => {
         res = func(res) 
         return res
-    }, 0)
+    }, init)
 }
