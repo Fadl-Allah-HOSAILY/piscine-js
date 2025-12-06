@@ -5,35 +5,20 @@ export function getArchitects(){
 }
 
 export function getClassical(){
-    let architects = getArchitects()
-    let classical = architects.filter(elem =>{
-        elem.classList.contains("classical")
-    })
-    let nonClassical = architects.filter(elem =>{
-        !elem.classList.contains("classical")
-    })
+    let classical = document.querySelectorAll('a.classical')
+    let nonClassical = document.querySelectorAll('a:not(a.classical)')
     return [classical, nonClassical]
 }
 
 export function getActive(){
-    let architects = getArchitects()
-    let active = architects.filter(elem =>{
-        elem.classList.contains("active")
-    })
-    let nonActive = architects.filter(elem =>{
-        !elem.classList.contains("active")
-    })
+    let active = document.querySelectorAll('a.classical.active')
+    let nonActive = document.querySelectorAll('a.classical.a:not(a.active)')
+
     return [active, nonActive]
 }
 
 export function getBonannoPisano(){
     let bonannoPisano = document.getElementById("BonannoPisano")
-    let classical = architects.filter(elem =>{
-        elem.classList.contains("classical")
-    })
-    let activeClassical = classical.filter(elem =>{
-        elem.classList.contains("active")
-    })
-    let architects = getArchitects()
+    let activeClassical = document.querySelectorAll('a.classical.active')
     return [bonannoPisano, activeClassical]
 }
