@@ -1,7 +1,7 @@
 function pick(obj, arg){
     const newObj = {}
     const keys = Object.keys(obj)
-    for (let i = 0; i < obj.length; i++) {
+    for (let i = 0; i < keys.length; i++) {
         if (Array.isArray(arg)){
             for (let j = 0; j < arg.length; j++) {
                 if (keys[i] === arg[j]){
@@ -17,3 +17,6 @@ function pick(obj, arg){
     return newObj
 }
 
+function omit(arg){
+
+}
