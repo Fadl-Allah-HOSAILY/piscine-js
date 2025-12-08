@@ -17,15 +17,21 @@ function pick(obj, arg){
     return newObj
 }
 
-function omit(arg){
+function omit(obj, arg){
     const newObj = {}
     const keys = Object.keys(obj)
+    let found = false
     for (let i = 0; i < keys.length; i++) {
         if (Array.isArray(arg)){
             for (let j = 0; j < arg.length; j++) {
-                if (keys[i] !== arg[j]){
-                    newObj[keys[i]] = obj[keys[i]]
+                if (keys[i] === arg[j]){
+                    found = true
                 }
+            }
+            if (!found){
+                newObj[keys[i]] = obj[keys[i]]
+            }else {
+                found = false
             }
         }else{
             if (keys[i] !== arg){
