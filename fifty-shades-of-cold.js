@@ -151,7 +151,7 @@ export function generateClasses() {
 
 }
 
-const reg = /aqua|blue|turquoise|green|cyan|navy|purple/gi;
+const reg = /(aqua|blue|turquoise|green|cyan|navy|purple)/;
 export function generateColdShades() {
     const clrs = colors.filter(color => reg.test(color))
     for (let i = 0; i < clrs.length; i++) {
