@@ -10,7 +10,7 @@ function pick(obj, arg){
             }
         }else{
             if (keys[i] === arg){
-                newObj[keys[i]] === obj[keys[i]]
+                newObj[keys[i]] = obj[keys[i]]
             }
         }
     }
@@ -29,7 +29,7 @@ function omit(arg){
             }
         }else{
             if (keys[i] !== arg){
-                newObj[keys[i]] === obj[keys[i]]
+                newObj[keys[i]] = obj[keys[i]]
             }
         }
     }
