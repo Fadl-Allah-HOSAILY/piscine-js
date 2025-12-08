@@ -153,14 +153,14 @@ export function generateClasses() {
 
 const reg = /(aqua|blue|turquoise|green|cyan|navy|purple)/;
 export function generateColdShades() {
-    const clrs = colors.filter(color => reg.test(color))
-    for (let i = 0; i < clrs.length; i++) {
+    for (let i = 0; i < colors.length; i++) {
+        if (reg.test(colors[i])) {
         const div = document.createElement("div")
         div.classList.add(colors[i])
         div.innerText = colors[i]
         document.body.append(div)
+        }
     }
-
 }
 
 export function choseShade(arg) {
