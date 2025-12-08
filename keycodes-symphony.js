@@ -38,8 +38,8 @@ export function compose() {
             div.innerText = key
             document.body.append(div)
         }else if (key === "Escape"){
-            const all = document.querySelectorAll(".node")
-            all.forEach(element => element.remove() );
+            const all = document.querySelectorAll('.note')
+            all.forEach(element => element.remove())
         }else if (key === "Backspace"){
             document.body.lastElementChild.remove()
         }
