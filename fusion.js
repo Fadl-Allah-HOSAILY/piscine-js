@@ -5,11 +5,11 @@ function fusion(obj1, obj2){
     const value2 = Object.values(obj2)
     const newObj = {}
     for (let i = 0; i < keys1.length; i++) {
-        keyI = keys1[i]
-        valueI = value1[i]
+        let keyI = keys1[i]
+        let valueI = value1[i]
         for (let j = 0; j < keys2.length; j++) {
-            keyJ = keys2[j]
-            valueJ = value2[j]
+            let keyJ = keys2[j]
+            let valueJ = value2[j]
             if (keyI === keyJ){
                 if ((Array.isArray(valueI)) && (Array.isArray(valueJ))){
                     newObj[keyI] = [...valueI, ...valueJ]
@@ -27,3 +27,5 @@ function fusion(obj1, obj2){
     }
     return newObj
 }
+
+console.log((fusion({ nbr: 12 }, { nbr: 23 }).nbr, 35));
