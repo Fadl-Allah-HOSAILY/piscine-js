@@ -18,7 +18,7 @@ function mapKeys(obj, func){
 
 function reduceKeys(obj, func, init = ''){
     const keys = Object.keys(obj)
-    const res = init
+    let res = init
     for (let i = 0; i < keys.length; i++) {
         res = func(res, keys[i])
     }
