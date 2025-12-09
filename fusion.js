@@ -35,7 +35,17 @@ function fusion(obj1, obj2){
         }
         found = false
     }
+    for (let key of keys2) {
+        if (!(key in newObj)) {
+            newObj[key] = obj2[key]
+        }
+    }
     return newObj
 }
 
-console.log(fusion({ a: 12, b: 2, c: 43 }, { a: 23, b: 2 }));
+// console.log(fusion({ a: 12, b: 2, c: 43 }, { a: 23, b: 2 }));
+console.log(fusion(
+      { arr: [], arr1: [1] },
+      { arr: [12, 3], arr1: [2, 3], arr2: ['2', '1'] }
+    ));
+
