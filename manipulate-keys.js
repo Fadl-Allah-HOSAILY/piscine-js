@@ -16,12 +16,25 @@ function mapKeys(obj, func){
     return mappedObj
 }
 
-function reduceKeys(obj, func, init = ''){
+function reduceKeys(obj, func, init){
     const keys = Object.keys(obj)
-    let res = init
-    for (let i = 0; i < keys.length; i++) {
+    let res
+    let startIndex
+    if (init === undefined) {
+        res = keys[0]
+        startIndex = 1
+    } else {
+        res = init
+        startIndex = 0
+    }
+    for (let i = startIndex; i < keys.length; i++) {
         res = func(res, keys[i])
     }
     return res
 }
 
+const cart = { vinegar: 1, sugar: 1, oil: 1, onion: 1, garlic: 1, paprika: 1 };
+
+console.log(
+    reduceKeys(cart, (acc, cr) => acc.concat(', ', cr))
+);
