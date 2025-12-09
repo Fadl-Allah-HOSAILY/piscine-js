@@ -12,19 +12,14 @@ function fusion(obj1, obj2){
         if (keys2.includes(keyI)){
             if ((Array.isArray(valueI)) && (Array.isArray(valueJ))){
                 newObj[keyI] = [...valueI, ...valueJ]
-                found = true
             }else if ((typeof(valueI) === "string") && typeof(valueJ) === "string"){
                 newObj[keyI] = valueI + ' ' + valueJ
-                found = true
             }else if ((typeof(valueI) === "number") && typeof(valueJ) === "number"){
                 newObj[keyI] = valueI + valueJ
-                found = true
             }else if (((typeof(valueI) === "object") && (!Array.isArray(valueI))) && ((typeof(valueJ) === "object") && (!Array.isArray(valueJ)))){
                 ewObj[keyI] = fusion(obj1[keyI], obj2[keyJ])
-                found = true
             }else {
                 newObj[keyI] = valueJ
-                found = true
             }
         }else {
             newObj[keyI] = valueI
@@ -42,3 +37,4 @@ function fusion(obj1, obj2){
     return newObj
 }
 
+console.log(fusion({ nbr: 12 }, { nbr: 23 }));
