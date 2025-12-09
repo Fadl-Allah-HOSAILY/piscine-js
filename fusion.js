@@ -4,48 +4,47 @@ function fusion(obj1, obj2){
     const keys2 = Object.keys(obj2)
     const value2 = Object.values(obj2)
     const newObj = {}
-    let found = false 
     for (let i = 0; i < keys1.length; i++) {
         let keyI = keys1[i]
+        let keyJ = keys2[i]
         let valueI = value1[i]
-        for (let j = 0; j < keys2.length; j++) {
-            let keyJ = keys2[j]
-            let valueJ = value2[j]
-            if (keyI === keyJ){
-                if ((Array.isArray(valueI)) && (Array.isArray(valueJ))){
-                    newObj[keyI] = [...valueI, ...valueJ]
-                    found = true
-                }else if ((typeof(valueI) === "string") && typeof(valueJ) === "string"){
-                    newObj[keyI] = valueI + ' ' + valueJ
-                    found = true
-                }else if ((typeof(valueI) === "number") && typeof(valueJ) === "number"){
-                    newObj[keyI] = valueI + valueJ
-                    found = true
-                }else if (((typeof(valueI) === "object") && (!Array.isArray(valueI))) && ((typeof(valueJ) === "object") && (!Array.isArray(valueJ)))){
-                    ewObj[keyI] = fusion(obj1[keyI], obj2[keyJ])
-                    found = true
-                }else {
-                    newObj[keyI] = valueJ
-                    found = true
-                }
+        let valueJ = value2[i]
+        if (keys2.includes(keyI)){
+            if ((Array.isArray(valueI)) && (Array.isArray(valueJ))){
+                newObj[keyI] = [...valueI, ...valueJ]
+                found = true
+            }else if ((typeof(valueI) === "string") && typeof(valueJ) === "string"){
+                newObj[keyI] = valueI + ' ' + valueJ
+                found = true
+            }else if ((typeof(valueI) === "number") && typeof(valueJ) === "number"){
+                newObj[keyI] = valueI + valueJ
+                found = true
+            }else if (((typeof(valueI) === "object") && (!Array.isArray(valueI))) && ((typeof(valueJ) === "object") && (!Array.isArray(valueJ)))){
+                ewObj[keyI] = fusion(obj1[keyI], obj2[keyJ])
+                found = true
+            }else {
+                newObj[keyI] = valueJ
+                found = true
             }
-        }
-        if (!found){
+        }else {
             newObj[keyI] = valueI
         }
-        found = false
     }
-    for (let key of keys2) {
-        if (!(key in newObj)) {
-            newObj[key] = obj2[key]
+    const keys = Object.keys(newObj)
+    for (let i = 0; i < keys2.length; i++) {
+        let keyJ = keys2[i]
+        let valueJ = value2[i]
+        key = keys[i]
+        if (!keys2.includes(key)) {
+            newObj[keyJ] = valueJ
         }
     }
     return newObj
 }
 
-// console.log(fusion({ a: 12, b: 2, c: 43 }, { a: 23, b: 2 }));
+console.log(fusion({ a: 12, b: 2, c: 43 }, { a: 23, b: 2 }));
 console.log(fusion(
-      { arr: [], arr1: [1] },
-      { arr: [12, 3], arr1: [2, 3], arr2: ['2', '1'] }
-    ));
+    { arr: [], arr1: [1] },
+    { arr: [12, 3], arr1: [2, 3], arr2: ['2', '1'] }
+));
 
