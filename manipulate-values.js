@@ -16,9 +16,9 @@ function mapValues(obj, func){
     return mappedObj
 }
 
-function reduceValues(obj, func){
+function reduceValues(obj, func, initial = 0){
     const values = Object.values(obj)
-    let res = 0
+    let res = initial
     for (let i = 0; i < values.length; i++) {            
         res = func(res, values[i])
     }
