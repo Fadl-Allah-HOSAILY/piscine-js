@@ -51,7 +51,7 @@ function cartTotal(cart) {
     return mapEntries(cart, ([k, v]) => {
         let newObj = {}
         for (let nutriment in nutritionDB[k]) {
-            newObj[nutriment] = +((v / 100) * nutritionDB[k][nutriment].toFixed(1))
+            newObj[nutriment] = +((v / 100) * nutritionDB[k][nutriment].toFixed(2))
         }
         return [k, newObj]
     })
