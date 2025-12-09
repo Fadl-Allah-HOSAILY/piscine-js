@@ -42,9 +42,3 @@ function fusion(obj1, obj2){
     return newObj
 }
 
-console.log(fusion({ a: 12, b: 2, c: 43 }, { a: 23, b: 2 }));
-console.log(fusion(
-    { arr: [], arr1: [1] },
-    { arr: [12, 3], arr1: [2, 3], arr2: ['2', '1'] }
-));
-
