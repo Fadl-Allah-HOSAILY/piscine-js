@@ -17,7 +17,7 @@ function fusion(obj1, obj2){
             }else if ((typeof(valueI) === "number") && typeof(valueJ) === "number"){
                 newObj[keyI] = valueI + valueJ
             }else if (((typeof(valueI) === "object") && (!Array.isArray(valueI))) && ((typeof(valueJ) === "object") && (!Array.isArray(valueJ)))){
-                ewObj[keyI] = fusion(obj1[keyI], obj2[keyJ])
+                newObj[keyI] = fusion(obj1[keyI], obj2[keyJ])
             }else {
                 newObj[keyI] = valueJ
             }
