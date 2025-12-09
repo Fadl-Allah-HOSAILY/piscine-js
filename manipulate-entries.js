@@ -36,7 +36,7 @@ function reduceEntries(obj, func, init) {
 
 function totalCalories(cart) {
     return reduceEntries(cart, (acc, [k, v]) => {
-        return acc + (v / 100) * nutritionDB[k].calories
+        return (acc + (v / 100) * nutritionDB[k].calories).toFixed(1)
     }, 0)
 }
 
