@@ -51,11 +51,8 @@ function cartTotal(cart) {
     return mapEntries(cart, ([k, v]) => {
         let newObj = {}
         for (let nutriment in nutritionDB[k]) {
-            newObj[nutriment] = round2((v / 100) * nutritionDB[k][nutriment])
+            newObj[nutriment] = +((v / 100) * nutritionDB[k][nutriment]).toFixed(3)
         }
         return [k, newObj]
     })
-}
-function round2(num) {
-    return Math.round(num * 100) / 100
 }
