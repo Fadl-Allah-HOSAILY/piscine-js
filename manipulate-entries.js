@@ -22,7 +22,7 @@ function mapEntries(obj, func) {
 
 function reduceEntries(obj, func, init) {
     const pairs = Object.entries(obj)
-    let startIndex
+    let startIndex = 0
     if (init === undefined) {
         init = pairs[0]
         startIndex = 1
