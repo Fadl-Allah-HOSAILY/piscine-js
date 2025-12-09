@@ -29,7 +29,7 @@ function fusion(obj1, obj2){
     for (let i = 0; i < keys2.length; i++) {
         let keyJ = keys2[i]
         let valueJ = value2[i]
-        key = keys[i]
+        let key = keys[i]
         if (!keys2.includes(key)) {
             newObj[keyJ] = valueJ
         }
