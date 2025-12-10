@@ -42,3 +42,15 @@ function reduceCurry(func){
         return acc
     }
 }
+
+function filterCurry(func){
+    return function(obj){
+        let newObj = {}
+        const entries = Object.entries(obj)
+        entries.forEach(([k, v]) => {
+            if (func([k, v])) newObj[k] = v
+        });
+        return newObj
+    }
+}
+
