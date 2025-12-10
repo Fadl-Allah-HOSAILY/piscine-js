@@ -6,8 +6,9 @@ function replica(target, ...source){
             if ( (Object.prototype.toString.call(value) === "[object Object]")&&(Object.prototype.toString.call(target[key]) === "[object Object]") ){
                 if (target[key]!==undefined) {
                     replica(target[key], value);
+                }else{
+                    replica(target, value);
                 }
-                replica(target, value);
             }else {
                 target[key] = value;
             }
