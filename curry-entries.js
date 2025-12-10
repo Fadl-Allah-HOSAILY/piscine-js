@@ -19,3 +19,15 @@ function defaultCurry(firstObj) {
         return newObj
     }
 }
+
+function mapCurry(func){
+    return function(obj){
+        let newObj = {}
+        const entries = Object.entries(obj)
+        entries.forEach(([k, v]) => {
+            const [newKey, newValue] = func([k, v])
+            newObj[newKey] = newValue
+        });
+        return newObj
+    }
+}
