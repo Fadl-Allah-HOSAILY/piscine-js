@@ -13,9 +13,9 @@ function pronoun(str){
                 res[word] = {word : [], count : 0}
             }
             res[word].count++
-            const nextWord = arr[i + 1]
-            if(nextWord){
-            res[word].word.push(nextWord)
+            const nextWord = arr[i + 1];
+            if (nextWord && !pronoun.includes(nextWord)) {
+                res[word].word.push(nextWord);
             }
         }
     }
