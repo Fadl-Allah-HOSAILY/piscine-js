@@ -54,7 +54,7 @@ function filterCurry(func) {
     }
 }
 
-function reduceScore(personnel) {
+function reduceScore(personnel, init) {
     return reduceCurry((acc, [k, v]) => {
         if (v.isForceUser) {
             return acc + v.pilotingScore + v.shootingScore
