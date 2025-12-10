@@ -3,7 +3,7 @@ function replica(target, ...source){
         let object = source[i]
         for (const key in object) {
             const value = object[key];
-            if ((object[key]) && (typeof(object[key]) === "object") && (!Array.isArray(object[key]))){
+            if ((object[key]) && (Object.prototype.toString.call(value) === "object") && (!Array.isArray(object[key]))){
                 replica(target[key], value);
             }else if (Array.isArray(value)){
                 target[key] = [...value];
