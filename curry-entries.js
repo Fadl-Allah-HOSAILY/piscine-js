@@ -61,7 +61,7 @@ function reduceScore(personnel) {
         } else {
             return acc
         }
-    })(personnel, 0)
+    })(personnel, init)
 }
 
 
