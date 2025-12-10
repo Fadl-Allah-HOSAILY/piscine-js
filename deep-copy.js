@@ -1,13 +1,23 @@
-function deepCopy(obj){
-    const keys = Object.keys(obj)
-    const values = Object.values(obj)
-    let newObj = {}
-    for (let i = 0; i < values.length; i++) {
-        if (Array.isArray([i])){
-            newObj[keys[i]] = deepCopy(keys[i])
-        }else{
-            newObj[keys[i]] = values[i]
+function deepCopy(data) {
+    let res
+    if (Array.isArray(data)) {
+        res = []
+        for (let i = 0; i < data.length; i++) {
+            if (Array.isArray(data[i])) {
+                res.push(deepCopy(data[i]))
+            } else {
+                res.push(data[i])
+            }
+        }
+    } else {
+        res = {}
+        for (const key in data) {
+            if (data[key] && typeof (data[key]) === "object" && (!Array.isArray(data[key]))) {
+                res[key] = deepCopy(data[key])
+            } else {
+                res[key] = data[key]
+            }
         }
     }
-    return newObj
+    return res
 }
