@@ -31,3 +31,14 @@ function mapCurry(func){
         return newObj
     }
 }
+
+function reduceCurry(func){
+    return function(obj, init){
+        let acc = init
+        const entries = Object.entries(obj)
+        entries.forEach(([k, v]) => {
+            acc = func(acc, [k, v])
+        });
+        return acc
+    }
+}
