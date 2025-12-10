@@ -1,0 +1,3 @@
+function replica(target, ...source){
+    
+}
