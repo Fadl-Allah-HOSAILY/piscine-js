@@ -20,8 +20,8 @@ function defaultCurry(firstObj) {
     }
 }
 
-function mapCurry(func){
-    return function(obj){
+function mapCurry(func) {
+    return function (obj) {
         let newObj = {}
         const entries = Object.entries(obj)
         entries.forEach(([k, v]) => {
@@ -32,8 +32,8 @@ function mapCurry(func){
     }
 }
 
-function reduceCurry(func){
-    return function(obj, init){
+function reduceCurry(func) {
+    return function (obj, init) {
         let acc = init
         const entries = Object.entries(obj)
         entries.forEach(([k, v]) => {
@@ -43,8 +43,8 @@ function reduceCurry(func){
     }
 }
 
-function filterCurry(func){
-    return function(obj){
+function filterCurry(func) {
+    return function (obj) {
         let newObj = {}
         const entries = Object.entries(obj)
         entries.forEach(([k, v]) => {
@@ -54,3 +54,24 @@ function filterCurry(func){
     }
 }
 
+function reduceScore(personnel) {
+    return reduceCurry((acc, [k, v]) => {
+        if (v.isForceUser) {
+            return acc + v.pilotingScore + v.shootingScore
+        } else {
+            return acc
+        }
+    })(personnel, 0)
+}
+
+
+function filterForce(personnel) {
+    return filterCurry(([k, v]) => v.isForceUser && v.shootingScore >= 80)(personnel)
+}
+
+function mapAverage(personnel){
+    return mapCurry(([k, v]) => {
+        const averageScore = (v.pilotingScore + v.shootingScore) / 2
+        return [k, {...v, averageScore}]
+    })(personnel)
+}
