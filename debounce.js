@@ -1,9 +1,9 @@
 function debounce(func, delay){
     let timer
-    return function (...agrs){
+    return function (...args){
         clearTimeout(timer)
         timer = setTimeout(() => {
-            func(...atrgs)
+            func(...args)
         }, delay)
     }
 }
