@@ -1,10 +1,10 @@
-function interpolation({steps, start, end, callback, duration}){
-    if (steps <= 0) return;
+function interpolation({step, start, end, callback, duration}){
+    if (step <= 0) return;
     const distance = (end - start) / steps
     const delay = duration / steps
     for (let i = 0; i < steps; i++) {
-         const x = start + distance * i
-        const y = delay * (i + 1 )
+        const x = start + distance * i
+        const y = delay * (i + 1)
         setTimeout(() => {
             callback([x, y])
         }, y)
