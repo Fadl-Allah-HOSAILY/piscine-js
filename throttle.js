@@ -11,19 +11,17 @@ function throttle(func, delay) {
 }
 
 function opThrottle(func, delay, opts) {
-    let wait = false
     let timer = null
     return function (...args) {
-        if (!wait) {
+        if (!timer) {
             if (opts.leading) {
                 func(...args)
             }
-            wait = true
             timer = setTimeout(() => {
+                timer = null
                 if (!opts.leading) {
                     func(...args)
                 }
-                wait = false;
                 timer = null;
             }, delay)
         }
