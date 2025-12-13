@@ -1,5 +1,5 @@
 function interpolation({steps, start, end, callback, duration}){
-    if (step <= 0) return;
+    if (steps <= 0) return;
     const distance = (end - start) / steps
     const delay = duration / steps
     for (let i = 0; i < steps; i++) {
