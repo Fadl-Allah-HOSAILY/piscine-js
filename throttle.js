@@ -11,20 +11,24 @@ function throttle(func, delay) {
 }
 
 function opThrottle(func, delay, opts) {
-    let timeout = null
+    let wait = false
+    let lastArg = null
+    let timer = null
     return function (...args) {
-        if (!timeout) {
+        lastArg = args
+        if (!wait) {
             if (opts.leading) {
                 func(...args)
             }
-
-            setTimeout(() => {
-                if (!opts.leading) {
-                    func(...args)
+            wait = true
+            timer = setTimeout(() => {
+                if (opts.trailing) {
+                    func(...lastArg)
                 }
-                timeout = null
+                wait = false;
+                lastArg = null;
+                timer = null;
             }, delay)
         }
     }
-
 }
