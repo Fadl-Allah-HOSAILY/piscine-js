@@ -10,8 +10,8 @@ function throttle(func, delay) {
     }
 }
 
-function opThrottle(func, delay, opts) {
-    let timer = null
+function opThrottle(func, delay, opts = {}) {
+    let timer 
     return function (...args) {
         if (!timer) {
             if (opts.leading) {
@@ -22,7 +22,6 @@ function opThrottle(func, delay, opts) {
                 if (!opts.leading) {
                     func(...args)
                 }
-                timer = null;
             }, delay)
         }
     }
