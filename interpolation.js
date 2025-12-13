@@ -6,6 +6,6 @@ function interpolation(steps, start, end, callback, duration){
             const x = i * delay
             const y = start + i * distance
             callback([x, y])
-        }, x)
+        }, i * delay)
     }
 }
