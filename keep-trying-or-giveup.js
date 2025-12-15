@@ -15,9 +15,9 @@ function retry(count, callback) {
 function timeout(delay, callback){
     return async function(...args){
         const promesseCallback = callback(...args);
-        const promesseTimeout = new Promise((resolve) =>  {
+        const promesseTimeout = new Promise((_, reject) =>  {
             setTimeout(() => {
-                resolve(Error('timeout'))
+                reject(Error('timeout'))
             }, delay)
         })
         return Promise.race([promesseCallback, promesseTimeout])
