@@ -20,7 +20,6 @@ let count = 0
 export function pimp(){
     const button = document.querySelector("button")
     if (!button.classList.contains("unpimp")){
-        console.log(count);
         button.classList.add(styles[count])
         count +=1
         if (count === styles.length){
@@ -28,7 +27,6 @@ export function pimp(){
         }
     }else{
         count -=1
-        console.log(count);
         button.classList.remove(styles[count])
         if (count === 0){
             button.classList.toggle("unpimp")

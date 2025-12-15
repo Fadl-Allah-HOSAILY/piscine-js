@@ -22,4 +22,5 @@ function timeout(delay, callback){
         })
         return Promise.race([promesseCallback, promesseTimeout])
     }
-}
+}*
+

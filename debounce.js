@@ -23,3 +23,26 @@ function opDebounce(func, delay, leading){
             }
         }
 }
+
+    // --- Debounce function ---
+    function debounce(func, delay) {
+        let timeout;
+        return function (...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), delay);
+        };
+    }
+
+    // --- Actual handler ---
+    function handleInput(event) {
+        document.getElementById("result").textContent =
+            "Searching for: " + event.target.value;
+    }
+
+    // Wrap handler with debounce (300ms delay)
+    const debouncedInput = debounce(handleInput, 300);
+
+    // Attach to input field
+    document.getElementById("searchInput").addEventListener("input", debouncedInput);
+
+

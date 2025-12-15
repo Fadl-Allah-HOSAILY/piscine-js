@@ -37,10 +37,10 @@ export function compose() {
             div.style.background = colors[asciiNbr]
             div.innerText = key
             document.body.append(div)
-        }else if (key === "Escape"){
+        } else if (key === "Escape") {
             const all = document.querySelectorAll('.note')
             all.forEach(element => element.remove())
-        }else if (key === "Backspace"){
+        } else if (key === "Backspace") {
             document.body.lastElementChild.remove()
         }
     })
