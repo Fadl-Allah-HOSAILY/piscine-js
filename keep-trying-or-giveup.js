@@ -20,6 +20,6 @@ function timeout(delay, callback){
                 resolve(Error('timeout'))
             }, delay)
         })
-        return Promise.race(promesseCallback, promesseTimeout)
+        return Promise.race([promesseCallback, promesseTimeout])
     }
 }
